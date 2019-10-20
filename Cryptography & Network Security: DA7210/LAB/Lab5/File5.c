@@ -34,7 +34,6 @@ int main()
 
         printf("\n1.Encrypt\n2.Decrypt\n3.Exit\nEnter option to perform operation:");
         scanf("%d",&option);
-
         switch (option)
             {
         case 1:
@@ -42,7 +41,7 @@ int main()
 	        scanf("%s",&message);
 	        printf("Enter key: ");
 	        scanf("%d", &key);
-	        caeserCipher(message,key);
+	        caeserCipher(message,key%26);
 	        printf("Encrypted message: %s\n", message);
             break;
         case 2:
@@ -50,7 +49,7 @@ int main()
 	        scanf("%s",&message);
 	        printf("Enter key: ");
 	        scanf("%d", &key);
-	        caeserCipher(message,abs(26-key));
+	        caeserCipher(message,26-(key%26));
 	        printf("Encrypted message: %s\n", message);
             break;
         case 3:
